@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        #main {
+            max-width: 1160px;
+            margin: 50px auto;
+            border: 1px solid gray;
+            border-radius: 10px;
+        }
+        .data {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">Click me</button>
+    <div id="container">
+
+    </div>
+
+    <script>
+        document.getElementById('btn').addEventListener('click', ()=> {
+            const url = 'https://jsonplaceholder.typicode.com/todos';
+        fetch(url)
+        .then(res => res.json())
+        .then(json => {
+            displaData(json)
+        })
+
+        const displaData = (data) => {
+               const container = document.getElementById('container');
+
+               data.forEach(post => {
+                 const mal = document.createElement('div');
+                 mal.innerHTML = `
+                   <div id="main">
+                   <div class="data">
+                     <p>Title : ${post.title}</p>
+                       <P>IS: ${post.completed == true ? `<i class="fa-solid fa-circle-check"></i>` : `<i class="fa-regular fa-circle-check"></i>`} </P>
+                       </div>
+
+    </div>
+                 
+                 
+                 `
+                 
+                 container.appendChild(mal)
+               })
+        }
+
+
+        })
+    </script>
+</body>
+</html>
