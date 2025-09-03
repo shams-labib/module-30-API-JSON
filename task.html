@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flecth</title>
+
+    <style>
+        #container {
+               max-width: 1160px;
+               margin: 50px auto;
+               border: 1px solid gray;
+               border-radius: 20px;
+               box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+        }
+        .containerBOX {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+    </style>
+</head>
+<body>
+    <button onclick="loadclick()">Load Data</button>
+     <div id="container">
+        
+     </div>
+
+
+    <script>
+      const loadclick = () => {
+        const url = 'https://jsonplaceholder.typicode.com/albums';
+        fetch(url)
+        .then(res => res.json())
+        .then(json => {
+            displayData(json)
+        })
+      }
+
+      const displayData = (data) => {
+             const container = document.getElementById('container');
+             container.innerHTML = "";
+             data.forEach(post => {
+               const text = document.createElement('div');
+               text.innerHTML = `
+               <div class="containerBOX">
+            <h1>User ID: ${post.userId} </h1>
+             <h2>ID No: ${post.id} </h2>
+            <h4>Title: ${post.title} </h4>
+              </div> 
+               `
+
+               container.append(text)
+             })
+      }
+    </script>
+</body>
+</html>
