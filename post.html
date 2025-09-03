@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #container {
+            max-width: 1160px;
+            margin: 50px auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+            row-gap: 40px;
+        }
+        .id-card{
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+            height: 100%;
+        }
+        .id-card p {
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="loadPosts()">Load loadPosts</button>
+    <div id="container">
+        
+    </div>
+
+    <script src="./post.js"></script>
+</body>
+</html>

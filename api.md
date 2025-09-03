@@ -1,0 +1,1 @@
+<!-- API hosce emn ekta bisoy jeta amar device like mobile and server er modde ekta maddom hisebe kaj kore, ami ki ki casci server er theke seta API amake server theke niye eshe dey, api hosce ekta hostel er waiter jake ar ami hosci amar phone, ami jokhon kono khabar order kori api seta hotel theke niye eshe amake serve kore ekhane hotel hosce sei server -->
